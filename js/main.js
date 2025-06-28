@@ -5,13 +5,13 @@ let elModalWarapper = document.querySelector(".modal-wrapper")
 let elModalInner = document.querySelector(".modal-inner")
 
 elList.innerHTML.innerHTML = `
-    <img class="w-[30px] h-[30px]" src="./images/loading-white.png" alt="loading img" />
+    <img class="w-[30px] h-[30px]" src="./images/loading.png" alt="loading img" />
 `
 
 const api = "https://fakestoreapi.com/products"
 
 const TOKEN = "7735446333:AAH_VCudufhqk9bKcKrtDjdG6zBrIleeWEk"
-const CHAT_ID = "6495634802"
+const CHAT_ID = "-1002817849603"
 const API_Message = `https://api.telegram.org/bot${TOKEN}/sendPhoto`
 
 //Get products
@@ -38,7 +38,7 @@ function renderProducts(arr, list){
 //order part
 function handleOrder(id){
     elModalWarapper.classList.remove("scale-0")
-    elModalInner.innerHTML = `<img class="w-[30px] h-[30px]" src="./images/loading-white.png" alt="loading img" />`
+    elModalInner.innerHTML = `<img class="w-[30px] h-[30px]" src="./images/loading.png" alt="loading img" />`
     elModalInner.className = "bg-white shadow-slate-500 shadow-lg p-5 rounded-[25px]"
     axios(`${api}/${id}`).then(res => {
         elModalInner.innerHTML = `
