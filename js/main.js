@@ -25,7 +25,7 @@ function renderProducts(arr, list){
         let elItem = document.createElement("li")
         elItem.className = "w-[300px] rounded-[30px] overflow-hidden p-4 bg-[#2e2e48] shadow-md"
         elItem.innerHTML = `
-        <img class="h-[300px] mb-3 mx-auto" src="${item.image} alt="img" " />
+        <img class="h-[300px] w-[230px] mb-3 mx-auto rounded-[30px]" src="${item.image}" alt="img" " />
         <h2 class="text-[#f5f5f5] font-bold text-[18px] line-clamp-1 mb-2">${item.title}</h2>
         <p class="text-[#f5f5f5] font-semibold text-[16px] line-clamp-1 mb-1">${item.description}</p>
         <strong class="text-[#f5f5f5] text-[18px]  mb-2 inline-block">${item.price}$ </strong>
@@ -43,7 +43,7 @@ function handleOrder(id){
     axios(`${api}/${id}`).then(res => {
         elModalInner.innerHTML = `
         <div class="flex gap-[30px] ">
-        <img class="h-[400px] w-[300px] rounded-[10px]" src="${res.data.image} alt="img" " width="300" height="300" />
+        <img class="h-[400px] w-[300px] rounded-[30px]" src="${res.data.image}" alt="img" " width="300" height="300" />
         <div class="w-[300px]">
         <h2 class=" text-[#f5f5f5] font-bold text-[18px] line-clamp-1 mb-2">${res.data.title}</h2>
         <p class=" text-[#f5f5f5] font-semibold text-[16px] line-clamp-1 mb-1">${res.data.description}</p>
