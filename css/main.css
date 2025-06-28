@@ -1,0 +1,9 @@
+.containers{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+  background-image:  linear-gradient(to bottom right, #1a1a2e, #561139);
+  min-height: 100vh; 
+}
