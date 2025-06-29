@@ -1,4 +1,5 @@
 let elList = document.querySelector(".item-list")
+let elSearchInput = document.querySelector(".search-input")
 
 // Modal 
 let elModalWarapper = document.querySelector(".modal-wrapper")
@@ -15,15 +16,21 @@ const CHAT_ID = "-1002817849603"
 const API_Message = `https://api.telegram.org/bot${TOKEN}/sendPhoto`
 
 //Get products
-const getProducts = () => axios(api).then(res => renderProducts(res.data, elList))
+const getProducts = () => {
+    axios(api).then(res => {
+        allProducts = res.data
+        renderProducts(allProducts, elList)
+    })
+}
 getProducts()
+
 
 //Render products
 function renderProducts(arr, list){
     list.innerHTML = null
     arr.forEach(item => {
         let elItem = document.createElement("li")
-        elItem.className = "w-[300px] rounded-[30px] overflow-hidden p-4 bg-white shadow-slate-500 shadow-lg"
+        elItem.className = "mx-auto  sm:mx-0 w-[300px] rounded-[30px] overflow-hidden p-4 bg-white shadow-slate-500 shadow-lg"
         elItem.innerHTML = `
         <img class="h-[300px] w-[230px] mb-3 mx-auto rounded-[30px]" src="${item.image}" alt="img" " />
         <h2 class="text-black font-bold text-[18px] line-clamp-1 mb-2">${item.title}</h2>
@@ -82,6 +89,23 @@ function handleOrder(id){
 
 //Order part 
 elModalWarapper.addEventListener("click", (e) => e.target.id == "wrapper" ? elModalWarapper.classList.add("scale-0") : "")
+
+//Search
+
+elSearchInput.addEventListener("input", () => {
+    let value = elSearchInput.value
+
+    if (value === "") {
+        renderProducts(allProducts, elList)
+        return
+    }
+
+    let filtered = allProducts.filter(item =>
+        item.price.toString().includes(value)
+    )
+
+    renderProducts(filtered, elList)
+})
 
 
 

@@ -8,8 +8,13 @@
     <style type="text/tailwindcss"></style>
 </head>
 <body class="p-5">
+    <header class="py-15">
+        <div class="containers">
+            <input class="search-input w-[350px] p-4 shadow-md shadow-transparent bg-white flex justify-center mx-auto rounded-lg border-[2px] border-transparent text-[18px] text-bold outline-none focus:shadow-blue-600 focus:border-blue-600" type="text" placeholder="Search by price..." name="search">
+        </div>
+    </header>
     <div class="containers">
-        <ul class="item-list flex flex-wrap justify-between gap-[30px]"></ul>
+        <ul class="item-list flex flex-col justify-center  sm:flex-row flex-wrap sm:justify-between gap-[30px]"></ul>
     </div>
 
     <div id="wrapper" class="modal-wrapper scale-0 duration-300 flex items-center justify-center fixed top-0 bottom-0 left-0 right-0 bg-[#00000097] backdrop-blur-[5px]">
