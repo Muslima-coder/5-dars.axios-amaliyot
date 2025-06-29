@@ -51,7 +51,7 @@ function handleOrder(id){
         elModalInner.innerHTML = `
         <div class="flex flex-col sm:flex-row gap-[30px] ">
         <img class="h-[200px] w-[150px] mx-auto sm:mx-0 sm:h-[400px] sm:w-[300px] rounded-[30px]" src="${res.data.image}" alt="img" " width="300" height="300" />
-        <div class="w-[300px]">
+        <div class="w-[250px] sm:w-[300px]">
         <h2 class=" text-black font-bold text-[18px] line-clamp-1 mb-2">${res.data.title}</h2>
         <p class=" text-black font-semibold text-[16px] line-clamp-1 mb-1">${res.data.description}</p>
         <strong class=" text-black text-[18px]  mb-2 inline-block">${res.data.price}$ </strong>
