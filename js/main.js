@@ -56,9 +56,9 @@ function handleOrder(id){
         <p class=" text-black font-semibold text-[16px] line-clamp-1 mb-1">${res.data.description}</p>
         <strong class=" text-black text-[18px]  mb-2 inline-block">${res.data.price}$ </strong>
         <form class="order-form space-y-3" autocomplete="off">
-        <input type="text" class="text-black  p-3 rounded-md outline-none shadow-md focus:shadow-[#8a2be2] w-full " placeholder="Enter name" name="name"  />
-        <input type="tel" class="text-black  p-3 rounded-md outline-none shadow-md focus:shadow-[#8a2be2] w-full " placeholder="Enter phone number" name="phone"  />
-        <input type="text" class="text-black  p-3 rounded-md outline-none shadow-md focus:shadow-[#8a2be2] w-full " placeholder="Enter address" name="address"  />
+        <input required type="text" class="text-black  p-3 rounded-md outline-none shadow-md focus:shadow-[#8a2be2] w-full " placeholder="Enter name" name="name"  />
+        <input required type="tel" class="text-black  p-3 rounded-md outline-none shadow-md focus:shadow-[#8a2be2] w-full " placeholder="Enter phone number" name="phone"  />
+        <input required type="text" class="text-black  p-3 rounded-md outline-none shadow-md focus:shadow-[#8a2be2] w-full " placeholder="Enter address" name="address"  />
         <button type="submit" class="w-full cursor-pointer hover:scale-[1.03] hover:bg-transparent hover:text-[#8a2be2] border-[2px] border-[#8a2be2] duration-300 py-2 rounded-md bg-[#8a2be2] text-white font-semibold ">Order</button>
         </form>
         </div>
